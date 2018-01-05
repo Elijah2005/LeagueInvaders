@@ -9,7 +9,7 @@ import java.awt.event.KeyListener;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
-public class GamePanel extends JPanel implements ActionListener, KeyListener {
+public class GamePanel extends JPanel implements ActionListener, KeyListener{
 	Timer clock;
 	final int MENU_STATE = 0;
 	final int GAME_STATE = 1;
@@ -74,16 +74,43 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	@Override
 	public void keyPressed(KeyEvent e) {
 		// TODO Auto-generated method stub
+		if(e.getKeyCode()== e.VK_ENTER) {
 		CURRENT_STATE +=1;
+		}
 		if(CURRENT_STATE > END_STATE){
 
             CURRENT_STATE = MENU_STATE;
-
 		}
+if(e.getKeyCode()==e.VK_UP) {
+	ship.up=true;
+}
+if(e.getKeyCode()==e.VK_DOWN) {
+	ship.down=true;
+}
+	if(e.getKeyCode()==e.VK_LEFT) {
+		ship.left=true;
+	}
+	if(e.getKeyCode()==e.VK_RIGHT) {
+		ship.right=true;
+	}
+
+	
 	}
 	@Override
 	public void keyReleased(KeyEvent e) {
 		// TODO Auto-generated method stub
+		if(e.getKeyCode()==e.VK_UP) {
+			ship.up=false;
+		}
+		if(e.getKeyCode()==e.VK_DOWN) {
+			ship.down=false;
+		}
+			if(e.getKeyCode()==e.VK_LEFT) {
+				ship.left=false;
+			}
+			if(e.getKeyCode()==e.VK_RIGHT) {
+				ship.right=false;
+			}
 	}
 	void updateMenuState() {
 		
