@@ -18,6 +18,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 	Font subtitleFont;
 	int CURRENT_STATE = MENU_STATE;
 	Rocketship ship = new Rocketship(225, 700, 50, 50);
+	ObjectManager m = new ObjectManager(ship);
 	  @Override
 	  public void paintComponent(Graphics g){
 		  if(CURRENT_STATE == MENU_STATE){
@@ -140,9 +141,8 @@ g.drawString("Press SPACE for instructions", 40, 510);
 	}
 	void drawGameState(Graphics g) {
 		g.setColor(Color.BLACK);
-
 		g.fillRect(0, 0, LeagueInvaders.width, LeagueInvaders.height);    
-ship.draw(g);
+m.draw(g);
 	}
 	void drawEndState(Graphics g) {
 		g.setColor(Color.RED);
