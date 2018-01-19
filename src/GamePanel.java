@@ -94,6 +94,10 @@ if(e.getKeyCode()==e.VK_DOWN) {
 	if(e.getKeyCode()==e.VK_RIGHT) {
 		ship.right=true;
 	}
+	if(e.getKeyCode()==e.VK_SPACE) {
+		m.addProjectile(new Projectile(ship.x+20, ship.y, 10, 10));
+		
+	}
 
 	
 	}
@@ -117,7 +121,8 @@ if(e.getKeyCode()==e.VK_DOWN) {
 		
 	}
 	void updateGameState() {
-		ship.update();
+		m.update();       
+		
 	}
 	void updateEndState() {
 		
