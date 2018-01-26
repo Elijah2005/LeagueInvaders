@@ -9,7 +9,7 @@ import java.awt.event.KeyListener;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
-public class GamePanel extends JPanel implements ActionListener, KeyListener{
+public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	Timer clock;
 	final int MENU_STATE = 0;
 	final int GAME_STATE = 1;
@@ -122,7 +122,7 @@ if(e.getKeyCode()==e.VK_DOWN) {
 	}
 	void updateGameState() {
 		m.update();       
-		
+		m.manageEnemies();
 	}
 	void updateEndState() {
 		
@@ -150,14 +150,14 @@ g.drawString("Press SPACE for instructions", 40, 510);
 m.draw(g);
 	}
 	void drawEndState(Graphics g) {
-		g.setColor(Color.RED);
-		g.fillRect(0, 0, LeagueInvaders.width, LeagueInvaders.height);    
-        g.setColor(Color.BLACK);
-        g.setFont(titleFont);
-        g.drawString("Game Over", 110, 190);
-        g.setFont(subtitleFont);
-        g.drawString("You killed 0 enemies", 100, 350);
-        g.setFont(subtitleFont);
-        g.drawString("Press ENTER to restart", 80, 510);
+		 g.setColor(Color.RED);
+		 g.fillRect(0, 0, LeagueInvaders.width, LeagueInvaders.height);    
+         g.setColor(Color.BLACK);
+         g.setFont(titleFont);
+         g.drawString("Game Over", 110, 190);
+         g.setFont(subtitleFont);
+         g.drawString("You killed 0 enemies", 100, 350);
+         g.setFont(subtitleFont);
+         g.drawString("Press ENTER to restart", 80, 510);
 	}
 }
