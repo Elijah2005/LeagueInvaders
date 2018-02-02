@@ -13,6 +13,7 @@ boolean right=false;
 		// TODO Auto-generated constructor stub
 	}
 void update() {
+	super.update();
 	if(up==true) {
 		y-=speed;
 	}
