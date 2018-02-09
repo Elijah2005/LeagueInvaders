@@ -16,10 +16,12 @@ public class LeagueInvaders{
 	}
 
 	LeagueInvaders() {
+		game = new GamePanel();
+		display.add(game);
 		display.setSize(width, height);
 		display.setVisible(true);
 		display.setDefaultCloseOperation(display.EXIT_ON_CLOSE);
-		 game = new GamePanel();
+		 
 		display.getContentPane().setPreferredSize(new Dimension(width, height));
 		display.pack();
 		display.addKeyListener(game);
@@ -27,7 +29,7 @@ public class LeagueInvaders{
 	}
 
 	void setup() {
-		display.add(game);
+		
 		game.startGame();
 	}
 
